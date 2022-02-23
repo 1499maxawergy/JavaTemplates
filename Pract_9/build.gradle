@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+
+jar(){
+    manifest {
+        attributes 'Main-Class': 'com.company.Main'
+    }
+}
+
+task copyJar(type: Copy){
+    dependsOn << jar
+    from "$rootDir/build/libs/Pract_9-1.0.jar"
+    into "$rootDir/src/main/resources/"
+}
+
+task deleteJar(type: Delete){
+    dependsOn << copyJar
+    delete file("$buildDir/libs/Pract_9-1.0.jar")
+}
+
+task createDockerImage(type: Exec){
+    dependsOn << deleteJar
+    commandLine 'docker', 'build', '-t', 'javap', './src/main/resources/'
+}
+
+task runDockerImage(type: Exec){
+    dependsOn << createDockerImage
+    commandLine 'docker', 'run', 'javap'
+}
+
+
+
+
