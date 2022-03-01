@@ -1,0 +1,360 @@
+592  [background-preinit] INFO  o.h.validator.internal.util.Version –
+                HV000001: Hibernate Validator 6.2.2.Final
+598  [main] INFO  ru.max.Pract_16.SpringBootApplication –
+                Starting Pract16Application using Java 17.0.2 on DESKTOP-Q9DVJEH with PID 75592 (C:\Users\Maxawergy\Downloads\Pract_19\build\classes\java\main started by Maxawergy in C:\Users\Maxawergy\Downloads\Pract_19)
+598  [main] INFO  ru.max.Pract_16.SpringBootApplication –
+                No active profile set, falling back to 1 default profile: "default"
+1558 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate –
+                Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+1617 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate –
+                Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2160 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer –
+                Tomcat initialized with port(s): 8080 (http)
+2173 [main] INFO  o.a.coyote.http11.Http11NioProtocol –
+                Initializing ProtocolHandler ["http-nio-8080"]
+2174 [main] INFO  o.a.catalina.core.StandardService –
+                Starting service [Tomcat]
+2175 [main] INFO  o.a.catalina.core.StandardEngine –
+                Starting Servlet engine: [Apache Tomcat/9.0.58]
+2269 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] –
+                Initializing Spring embedded WebApplicationContext
+2269 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext –
+                Root WebApplicationContext: initialization completed in 1621 ms
+2502 [main] INFO  o.h.jpa.internal.util.LogHelper –
+                HHH000204: Processing PersistenceUnitInfo [name: default]
+2581 [main] INFO  org.hibernate.Version –
+                HHH000412: Hibernate ORM core version 5.6.5.Final
+2792 [main] INFO  o.h.annotations.common.Version –
+                HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2914 [main] INFO  com.zaxxer.hikari.HikariDataSource –
+                HikariPool-1 - Starting...
+3150 [main] INFO  com.zaxxer.hikari.HikariDataSource –
+                HikariPool-1 - Start completed.
+3168 [main] INFO  org.hibernate.dialect.Dialect –
+                HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+3881 [main] DEBUG org.hibernate.SQL –
+                alter table jpa.student drop constraint FKqq8hb86jxf1vmnrcu6v7h0ac
+3902 [main] DEBUG org.hibernate.SQL –
+                drop table if exists jpa.group cascade
+3910 [main] DEBUG org.hibernate.SQL –
+                drop table if exists jpa.student cascade
+3913 [main] DEBUG org.hibernate.SQL –
+                drop sequence if exists jpa.hibernate_sequence
+3917 [main] DEBUG org.hibernate.SQL –
+                create sequence jpa.hibernate_sequence start 1 increment 1
+3926 [main] DEBUG org.hibernate.SQL –
+                create table jpa.group (id int4 not null, groupname varchar(255), primary key (id))
+3939 [main] DEBUG org.hibernate.SQL –
+                create table jpa.student (id int4 not null, firstname varchar(255), lastname varchar(255), middlename varchar(255), group_id int4, primary key (id))
+3947 [main] DEBUG org.hibernate.SQL –
+                alter table jpa.student add constraint FKqq8hb86jxf1vmnrcu6v7h0ac foreign key (group_id) references jpa.group
+3960 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator –
+                HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+3968 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean –
+                Initialized JPA EntityManagerFactory for persistence unit 'default'
+4324 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration –
+                spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+4770 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver –
+                Exposing 1 endpoint(s) beneath base path '/actuator'
+4792 [main] INFO  o.a.coyote.http11.Http11NioProtocol –
+                Starting ProtocolHandler ["http-nio-8080"]
+4817 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer –
+                Tomcat started on port(s): 8080 (http) with context path ''
+4832 [main] INFO  ru.max.Pract_16.SpringBootApplication –
+                Started Pract16Application in 4.57 seconds (JVM running for 5.255)
+5481 [RMI TCP Connection(1)-172.28.64.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] –
+                Initializing Spring DispatcherServlet 'dispatcherServlet'
+5481 [RMI TCP Connection(1)-172.28.64.1] INFO  o.s.web.servlet.DispatcherServlet –
+                Initializing Servlet 'dispatcherServlet'
+5482 [RMI TCP Connection(1)-172.28.64.1] INFO  o.s.web.servlet.DispatcherServlet –
+                Completed initialization in 1 ms
+12487 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL –
+                select group0_.id as id1_0_, group0_.groupname as groupnam2_0_ from jpa.group group0_ where group0_.groupname=?
+12492 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder –
+                binding parameter [1] as [VARCHAR] - [IKBO-24-20]
+12518 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL –
+                select nextval ('jpa.hibernate_sequence')
+12549 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL –
+                insert into jpa.group (groupname, id) values (?, ?)
+12549 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder –
+                binding parameter [1] as [VARCHAR] - [IKBO-24-20]
+12549 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder –
+                binding parameter [2] as [INTEGER] - [1]
+12559 [http-nio-8080-exec-1] INFO  r.m.P.service.impl.GroupServiceImpl –
+                Group IKBO-24-20 added to database
+23806 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL –
+                select group0_.id as id1_0_, group0_.groupname as groupnam2_0_ from jpa.group group0_ where group0_.groupname=?
+23807 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder –
+                binding parameter [1] as [VARCHAR] - [IKBO-24-20]
+23814 [http-nio-8080-exec-3] INFO  r.m.P.service.impl.GroupServiceImpl –
+                Group with name IKBO-24-20 already exist
+40631 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean –
+                Closing JPA EntityManagerFactory for persistence unit 'default'
+40632 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource –
+                HikariPool-1 - Shutdown initiated...
+40636 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource –
+                HikariPool-1 - Shutdown completed.
+642  [background-preinit] INFO  o.h.validator.internal.util.Version –
+                HV000001: Hibernate Validator 6.2.2.Final
+642  [main] INFO  r.m.Pract_16.SpringBootApplication –
+                Starting SpringBootApplication using Java 17.0.2 on DESKTOP-Q9DVJEH with PID 204472 (C:\Users\Maxawergy\Downloads\Pract_19\build\classes\java\main started by Maxawergy in C:\Users\Maxawergy\Downloads\Pract_19)
+644  [main] INFO  r.m.Pract_16.SpringBootApplication –
+                No active profile set, falling back to 1 default profile: "default"
+1479 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate –
+                Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+1534 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate –
+                Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
+2027 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer –
+                Tomcat initialized with port(s): 8080 (http)
+2036 [main] INFO  o.a.coyote.http11.Http11NioProtocol –
+                Initializing ProtocolHandler ["http-nio-8080"]
+2036 [main] INFO  o.a.catalina.core.StandardService –
+                Starting service [Tomcat]
+2037 [main] INFO  o.a.catalina.core.StandardEngine –
+                Starting Servlet engine: [Apache Tomcat/9.0.58]
+2124 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] –
+                Initializing Spring embedded WebApplicationContext
+2125 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext –
+                Root WebApplicationContext: initialization completed in 1440 ms
+2404 [main] INFO  o.h.jpa.internal.util.LogHelper –
+                HHH000204: Processing PersistenceUnitInfo [name: default]
+2455 [main] INFO  org.hibernate.Version –
+                HHH000412: Hibernate ORM core version 5.6.5.Final
+2623 [main] INFO  o.h.annotations.common.Version –
+                HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2717 [main] INFO  com.zaxxer.hikari.HikariDataSource –
+                HikariPool-1 - Starting...
+2885 [main] INFO  com.zaxxer.hikari.HikariDataSource –
+                HikariPool-1 - Start completed.
+2898 [main] INFO  org.hibernate.dialect.Dialect –
+                HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+3480 [main] DEBUG org.hibernate.SQL –
+                alter table jpa.student drop constraint FKqq8hb86jxf1vmnrcu6v7h0ac
+3487 [main] DEBUG org.hibernate.SQL –
+                drop table if exists jpa.group cascade
+3491 [main] DEBUG org.hibernate.SQL –
+                drop table if exists jpa.student cascade
+3493 [main] DEBUG org.hibernate.SQL –
+                drop sequence if exists jpa.hibernate_sequence
+3497 [main] DEBUG org.hibernate.SQL –
+                create sequence jpa.hibernate_sequence start 1 increment 1
+3501 [main] DEBUG org.hibernate.SQL –
+                create table jpa.group (id int4 not null, groupname varchar(255), primary key (id))
+3507 [main] DEBUG org.hibernate.SQL –
+                create table jpa.student (id int4 not null, firstname varchar(255), lastname varchar(255), middlename varchar(255), group_id int4, primary key (id))
+3513 [main] DEBUG org.hibernate.SQL –
+                alter table jpa.student add constraint FKqq8hb86jxf1vmnrcu6v7h0ac foreign key (group_id) references jpa.group
+3517 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator –
+                HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+3525 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean –
+                Initialized JPA EntityManagerFactory for persistence unit 'default'
+3862 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration –
+                spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+4291 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver –
+                Exposing 1 endpoint(s) beneath base path '/actuator'
+4321 [main] INFO  o.a.coyote.http11.Http11NioProtocol –
+                Starting ProtocolHandler ["http-nio-8080"]
+4341 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer –
+                Tomcat started on port(s): 8080 (http) with context path ''
+4354 [main] INFO  r.m.Pract_16.SpringBootApplication –
+                Started SpringBootApplication in 4.005 seconds (JVM running for 5.457)
+8434 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean –
+                Closing JPA EntityManagerFactory for persistence unit 'default'
+8435 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource –
+                HikariPool-1 - Shutdown initiated...
+8443 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource –
+                HikariPool-1 - Shutdown completed.
+501  [background-preinit] INFO  o.h.validator.internal.util.Version –
+                HV000001: Hibernate Validator 6.2.2.Final
+501  [main] INFO  r.m.Pract_16.SpringBootApplication –
+                Starting SpringBootApplication using Java 17.0.2 on DESKTOP-Q9DVJEH with PID 26760 (C:\Users\Maxawergy\Downloads\Pract_19\build\classes\java\main started by Maxawergy in C:\Users\Maxawergy\Downloads\Pract_19)
+503  [main] INFO  r.m.Pract_16.SpringBootApplication –
+                No active profile set, falling back to 1 default profile: "default"
+1244 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate –
+                Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+1296 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate –
+                Finished Spring Data repository scanning in 42 ms. Found 2 JPA repository interfaces.
+1723 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer –
+                Tomcat initialized with port(s): 8080 (http)
+1730 [main] INFO  o.a.coyote.http11.Http11NioProtocol –
+                Initializing ProtocolHandler ["http-nio-8080"]
+1731 [main] INFO  o.a.catalina.core.StandardService –
+                Starting service [Tomcat]
+1731 [main] INFO  o.a.catalina.core.StandardEngine –
+                Starting Servlet engine: [Apache Tomcat/9.0.58]
+1807 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] –
+                Initializing Spring embedded WebApplicationContext
+1807 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext –
+                Root WebApplicationContext: initialization completed in 1265 ms
+2004 [main] INFO  o.h.jpa.internal.util.LogHelper –
+                HHH000204: Processing PersistenceUnitInfo [name: default]
+2045 [main] INFO  org.hibernate.Version –
+                HHH000412: Hibernate ORM core version 5.6.5.Final
+2151 [main] INFO  o.h.annotations.common.Version –
+                HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2230 [main] INFO  com.zaxxer.hikari.HikariDataSource –
+                HikariPool-1 - Starting...
+2397 [main] INFO  com.zaxxer.hikari.HikariDataSource –
+                HikariPool-1 - Start completed.
+2409 [main] INFO  org.hibernate.dialect.Dialect –
+                HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2951 [main] DEBUG org.hibernate.SQL –
+                alter table jpa.student drop constraint FKqq8hb86jxf1vmnrcu6v7h0ac
+2956 [main] DEBUG org.hibernate.SQL –
+                drop table if exists jpa.group cascade
+2959 [main] DEBUG org.hibernate.SQL –
+                drop table if exists jpa.student cascade
+2961 [main] DEBUG org.hibernate.SQL –
+                drop sequence if exists jpa.hibernate_sequence
+2965 [main] DEBUG org.hibernate.SQL –
+                create sequence jpa.hibernate_sequence start 1 increment 1
+2970 [main] DEBUG org.hibernate.SQL –
+                create table jpa.group (id int4 not null, groupname varchar(255), primary key (id))
+2976 [main] DEBUG org.hibernate.SQL –
+                create table jpa.student (id int4 not null, firstname varchar(255), lastname varchar(255), middlename varchar(255), group_id int4, primary key (id))
+2982 [main] DEBUG org.hibernate.SQL –
+                alter table jpa.student add constraint FKqq8hb86jxf1vmnrcu6v7h0ac foreign key (group_id) references jpa.group
+2986 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator –
+                HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2993 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean –
+                Initialized JPA EntityManagerFactory for persistence unit 'default'
+3291 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration –
+                spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3699 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver –
+                Exposing 1 endpoint(s) beneath base path '/actuator'
+3721 [main] INFO  o.a.coyote.http11.Http11NioProtocol –
+                Starting ProtocolHandler ["http-nio-8080"]
+3740 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer –
+                Tomcat started on port(s): 8080 (http) with context path ''
+3757 [main] INFO  r.m.Pract_16.SpringBootApplication –
+                Started SpringBootApplication in 3.544 seconds (JVM running for 4.115)
+3872 [RMI TCP Connection(2)-172.28.64.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] –
+                Initializing Spring DispatcherServlet 'dispatcherServlet'
+3872 [RMI TCP Connection(2)-172.28.64.1] INFO  o.s.web.servlet.DispatcherServlet –
+                Initializing Servlet 'dispatcherServlet'
+3873 [RMI TCP Connection(2)-172.28.64.1] INFO  o.s.web.servlet.DispatcherServlet –
+                Completed initialization in 1 ms
+7980 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL –
+                select group0_.id as id1_0_, group0_.groupname as groupnam2_0_ from jpa.group group0_ where group0_.groupname=?
+7984 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder –
+                binding parameter [1] as [VARCHAR] - [IKBO-24-20]
+8009 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL –
+                select nextval ('jpa.hibernate_sequence')
+8043 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL –
+                insert into jpa.group (groupname, id) values (?, ?)
+8044 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder –
+                binding parameter [1] as [VARCHAR] - [IKBO-24-20]
+8044 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder –
+                binding parameter [2] as [INTEGER] - [1]
+8051 [http-nio-8080-exec-1] INFO  r.m.P.service.impl.GroupServiceImpl –
+                Group IKBO-24-20 added to database
+23207 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL –
+                select group0_.id as id1_0_, group0_.groupname as groupnam2_0_ from jpa.group group0_ where group0_.groupname=?
+23207 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder –
+                binding parameter [1] as [VARCHAR] - [IKBO-24-20]
+23220 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL –
+                select list0_.group_id as group_id5_1_0_, list0_.id as id1_1_0_, list0_.id as id1_1_1_, list0_.firstname as firstnam2_1_1_, list0_.group_id as group_id5_1_1_, list0_.lastname as lastname3_1_1_, list0_.middlename as middlena4_1_1_ from jpa.student list0_ where list0_.group_id=?
+23220 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder –
+                binding parameter [1] as [INTEGER] - [1]
+23227 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL –
+                delete from jpa.group where id=?
+23227 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder –
+                binding parameter [1] as [INTEGER] - [1]
+23231 [http-nio-8080-exec-2] INFO  r.m.P.service.impl.GroupServiceImpl –
+                Group IKBO-24-20 deleted
+86087 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean –
+                Closing JPA EntityManagerFactory for persistence unit 'default'
+86087 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource –
+                HikariPool-1 - Shutdown initiated...
+86092 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource –
+                HikariPool-1 - Shutdown completed.
+497  [background-preinit] INFO  o.h.validator.internal.util.Version –
+                HV000001: Hibernate Validator 6.2.2.Final
+497  [main] INFO  r.m.Pract_16.SpringBootApplication –
+                Starting SpringBootApplication using Java 17.0.2 on DESKTOP-Q9DVJEH with PID 89672 (C:\Users\Maxawergy\Downloads\Pract_19\build\classes\java\main started by Maxawergy in C:\Users\Maxawergy\Downloads\Pract_19)
+499  [main] INFO  r.m.Pract_16.SpringBootApplication –
+                No active profile set, falling back to 1 default profile: "default"
+1244 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate –
+                Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+1293 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate –
+                Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
+1712 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer –
+                Tomcat initialized with port(s): 8080 (http)
+1719 [main] INFO  o.a.coyote.http11.Http11NioProtocol –
+                Initializing ProtocolHandler ["http-nio-8080"]
+1720 [main] INFO  o.a.catalina.core.StandardService –
+                Starting service [Tomcat]
+1720 [main] INFO  o.a.catalina.core.StandardEngine –
+                Starting Servlet engine: [Apache Tomcat/9.0.58]
+1794 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] –
+                Initializing Spring embedded WebApplicationContext
+1795 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext –
+                Root WebApplicationContext: initialization completed in 1255 ms
+1984 [main] INFO  o.h.jpa.internal.util.LogHelper –
+                HHH000204: Processing PersistenceUnitInfo [name: default]
+2025 [main] INFO  org.hibernate.Version –
+                HHH000412: Hibernate ORM core version 5.6.5.Final
+2131 [main] INFO  o.h.annotations.common.Version –
+                HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2210 [main] INFO  com.zaxxer.hikari.HikariDataSource –
+                HikariPool-1 - Starting...
+2373 [main] INFO  com.zaxxer.hikari.HikariDataSource –
+                HikariPool-1 - Start completed.
+2385 [main] INFO  org.hibernate.dialect.Dialect –
+                HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2919 [main] DEBUG org.hibernate.SQL –
+                alter table jpa.student drop constraint FKqq8hb86jxf1vmnrcu6v7h0ac
+2924 [main] DEBUG org.hibernate.SQL –
+                drop table if exists jpa.group cascade
+2927 [main] DEBUG org.hibernate.SQL –
+                drop table if exists jpa.student cascade
+2929 [main] DEBUG org.hibernate.SQL –
+                drop sequence if exists jpa.hibernate_sequence
+2933 [main] DEBUG org.hibernate.SQL –
+                create sequence jpa.hibernate_sequence start 1 increment 1
+2936 [main] DEBUG org.hibernate.SQL –
+                create table jpa.group (id int4 not null, groupname varchar(255), primary key (id))
+2941 [main] DEBUG org.hibernate.SQL –
+                create table jpa.student (id int4 not null, firstname varchar(255), lastname varchar(255), middlename varchar(255), group_id int4, primary key (id))
+2948 [main] DEBUG org.hibernate.SQL –
+                alter table jpa.student add constraint FKqq8hb86jxf1vmnrcu6v7h0ac foreign key (group_id) references jpa.group
+2952 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator –
+                HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2964 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean –
+                Initialized JPA EntityManagerFactory for persistence unit 'default'
+3259 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration –
+                spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3651 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver –
+                Exposing 1 endpoint(s) beneath base path '/actuator'
+3674 [main] INFO  o.a.coyote.http11.Http11NioProtocol –
+                Starting ProtocolHandler ["http-nio-8080"]
+3694 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer –
+                Tomcat started on port(s): 8080 (http) with context path ''
+3707 [main] INFO  r.m.Pract_16.SpringBootApplication –
+                Started SpringBootApplication in 3.487 seconds (JVM running for 4.067)
+3929 [RMI TCP Connection(3)-172.28.64.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] –
+                Initializing Spring DispatcherServlet 'dispatcherServlet'
+3930 [RMI TCP Connection(3)-172.28.64.1] INFO  o.s.web.servlet.DispatcherServlet –
+                Initializing Servlet 'dispatcherServlet'
+3931 [RMI TCP Connection(3)-172.28.64.1] INFO  o.s.web.servlet.DispatcherServlet –
+                Completed initialization in 1 ms
+8762 [http-nio-8080-exec-1] INFO  r.m.P.service.impl.GroupServiceImpl –
+                Request for add group: IKBO-24-20
+8852 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL –
+                select group0_.id as id1_0_, group0_.groupname as groupnam2_0_ from jpa.group group0_ where group0_.groupname=?
+8857 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder –
+                binding parameter [1] as [VARCHAR] - [IKBO-24-20]
+8882 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL –
+                select nextval ('jpa.hibernate_sequence')
+8918 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL –
+                insert into jpa.group (groupname, id) values (?, ?)
+8918 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder –
+                binding parameter [1] as [VARCHAR] - [IKBO-24-20]
+8918 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder –
+                binding parameter [2] as [INTEGER] - [1]
+65130 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean –
+                Closing JPA EntityManagerFactory for persistence unit 'default'
+65131 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource –
+                HikariPool-1 - Shutdown initiated...
+65137 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource –
+                HikariPool-1 - Shutdown completed.
